@@ -33,7 +33,7 @@ export default function() {
 
           error={ errors.username && "Введите имя пользователя" }
           label="Имя пользователя"
-          placeholder="Пётр"
+          placeholder="User"
           name="username"
           _ref={ register({ 
             required: true
