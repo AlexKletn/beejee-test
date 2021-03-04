@@ -15,19 +15,20 @@ export default function ListElement({ id, username, email, text, status, ...prop
 
   const [editMode, setEditMode] = useState(false);
   const editPopRef = useRef(null)
+  const editPopBtnRef = useRef(null)
 
   useEffect(() => {
     if(editMode) document.addEventListener('click', outsideClickHander, false);
   }, [editMode])
 
   function outsideClickHander(e) {
-    if(editPopRef.current != e.target.closest(`.${ style['edit-popup'] }`)) {
+    if(editPopRef.current != e.target.closest(`.${ style['edit-popup'] }`) && e.target.closest(`.${style['edit']}`) != editPopBtnRef.current) {
       setEditMode(false);
       document.removeEventListener('click', outsideClickHander, false);
     }
   } 
 
-  function editTask(data) {    
+  function editTask(data) {
     let parsedStatus = {
       textChanged: [1, 11].includes(status),
       performed: data.performed
@@ -80,6 +81,7 @@ export default function ListElement({ id, username, email, text, status, ...prop
       { appCtx.isAuth && 
         <>
           <Button 
+            _ref={ editPopBtnRef }
             className={ style['edit'] } 
             onClick={ () => setEditMode(!editMode) }
             circle 
@@ -109,7 +111,7 @@ export default function ListElement({ id, username, email, text, status, ...prop
 
                 <label className={ style['performed-check'] } >
                   <input 
-                    defaultChecked={ [1, 11].includes(status) }
+                    defaultChecked={ [0, 1].includes(status) }
                     name="performed" 
                     type="checkbox" 
                     ref={ register() }
