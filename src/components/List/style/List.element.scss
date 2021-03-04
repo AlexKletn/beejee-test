@@ -136,9 +136,9 @@
 
 @keyframes in {
   0% {
-    transform: translateX(-20px);
+    transform: scale(.9);
   }
   100% {
-    transform: translateX(0px);
+    transform: scale(1);
   }
 }

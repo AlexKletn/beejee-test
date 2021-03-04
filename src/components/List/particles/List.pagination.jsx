@@ -23,7 +23,7 @@ export default function ListPagination() {
           key={i}
           circle
           className={ `${ style['page-btn'] } ${ appCtx.page == i ? style['active'] : ''}` }
-          onClick={ () => appCtx.changePage(i) }
+          onClick={ () => goToPage(i) }
         >
           { i }
         </Button>
@@ -31,6 +31,14 @@ export default function ListPagination() {
     }
 
     return pageBtns
+  }
+
+  function goToPage(page) {
+    if(!wait && appCtx.page != page) {
+      appCtx.changePage(page);
+
+      setWait(true);
+    }
   }
 
   function nextPage() {

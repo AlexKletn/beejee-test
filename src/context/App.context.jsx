@@ -19,12 +19,13 @@ export function AppProvider ({children}){
   })
 
   useEffect(() => {
-    getList();
     let token = getToken();
     
     if(token) {
       setAuth(true);
     }
+    
+    getList();
   }, [state.page, sort.by, sort.dir]);
 
   function getToken() {
