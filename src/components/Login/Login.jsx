@@ -27,7 +27,7 @@ export default function() {
           {error}
         </div>
       }
-      <form className={ style['form'] } onSubmit={handleSubmit(login)}>
+      <form className={ style['form'] } onSubmit={ handleSubmit(login) }>
         <InputText 
           className={ style['username'] }
 

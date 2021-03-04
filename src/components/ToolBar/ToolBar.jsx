@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useReducer, useRef } from "react"
+import React, { useContext, useEffect, useReducer, useRef, useState } from "react"
 
 import { AppContext } from "@src/context/App.context.jsx"
 import Button         from "@components/Button"
 
 import CreateTask from "@components/CreateTask"
 import Login      from "@components/Login"
+import Alert      from "@components/Alert"
 
 import style      from "./ToolBar.scss"
 
@@ -72,6 +73,14 @@ export default function ToolBar() {
         <div ref={ activeToolRef } className={ style['tool'] }>
           <Login />
         </div>
+      }
+
+
+
+      { appCtx.taskAdded &&
+        <Alert>
+          Задача добавлена в список
+        </Alert>
       }
     </div>
   )  

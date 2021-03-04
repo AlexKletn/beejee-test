@@ -18,6 +18,8 @@ export function AppProvider ({children}){
     by: "username", dir: "asc"
   })
 
+  const [taskAdded, setTaskAdded] = useState(false)
+
   useEffect(() => {
     let token = getToken();
     
@@ -104,6 +106,9 @@ export function AppProvider ({children}){
   function createTask(task) {
     Api.Task.create(task)
       .then(res => {
+        setTaskAdded(true);
+        setTimeout( () => setTaskAdded(false), 3000 );
+
         getList()
       }, console.error)
   }
@@ -132,7 +137,10 @@ export function AppProvider ({children}){
 
         getList,
         changePage,
+        
         createTask,
+        taskAdded,
+
         editTask,
       }}
     >
