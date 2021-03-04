@@ -1,0 +1,62 @@
+.btn {  
+  background: rgba(255 255 255 / 20%);
+  backdrop-filter: blur(5px);
+  border: none;
+  padding: 10px;
+  line-height: 100%;
+  cursor: pointer;
+
+  color: #fff;
+
+  display: grid;
+  grid-template-areas: "label";
+
+  &.default {
+    background: rgba(255 255 255 / 20%);
+    backdrop-filter: blur(5px);
+  }
+
+  &.with-icon {
+    column-gap: 5px;
+
+    .circle {
+      .label {
+        display: none;
+      }
+    }
+
+    &.icon-left {
+      grid-template-areas: "icon label";
+      grid-template-columns: 30px 1fr;
+    }
+    &.icon-right {
+      grid-template-areas: "label icon";
+      grid-template-columns: 1fr 30px;
+    }
+  }
+
+  &.circle {
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    padding: unset;
+
+    grid-template-areas: "label" !important;
+
+    .icon {
+      display: none;
+    }
+  }
+
+  .icon {
+    grid-area: icon;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .label {
+    grid-area: label;
+    align-self: center;
+    justify-self: center;
+  }
+}

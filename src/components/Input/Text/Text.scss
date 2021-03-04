@@ -1,0 +1,41 @@
+.input-container {
+  display: grid;
+  position: relative;
+
+  grid-template-areas: '';
+  padding-bottom: 15px;
+
+  .label {
+    font-size: 12px;
+    margin: 0px 10px;
+    color: #fff;
+  }
+  .input {
+    background: rgba(255 255 255 / 90%);
+    padding: 10px;
+    margin: 5px 10px;
+    border: unset;
+    box-shadow: 3px 0px 15px -5px rgb(0 0 0 / 20%);
+    // border-left: 3px solid rgb(0 0 0 / 5%);
+    align-self: start;
+
+    &.input-error {
+      border-left: 3px solid rgb(250 0 0 / 50%);
+    }
+  }
+
+  textarea.input {
+    resize: vertical;
+    min-height: 30px;
+    max-height: 100px;
+    
+  }
+
+  .error-message {
+    font-size: 10px;
+    position: absolute;
+    top: calc(100% - 15px); 
+    left: 10px;
+    color: #fff;
+  }
+}

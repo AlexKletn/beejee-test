@@ -1,0 +1,42 @@
+.toolbar {
+  display: flex;
+  width: 100vw;
+  position: fixed;
+  bottom: 10px;
+
+  justify-content: center;
+
+  .tool {
+    z-index: 5;
+    position: fixed;
+    bottom: 20px;
+    margin: auto;
+
+    animation: in 1 .3s ease-in;
+  }
+  
+  .tool-btn {
+    z-index: 10;
+
+    &.active {
+      background: rgba(255 255 255 / 50%);
+    }
+    
+    &:not(:nth-last-of-type(1)) {
+      margin-right: 20px;
+    }
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+    clip-path: circle(0px at center);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    clip-path: circle(100% at 50% 100%);
+  }
+}

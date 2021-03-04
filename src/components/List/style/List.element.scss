@@ -1,0 +1,144 @@
+.element {  
+  background: rgba(255 255 255 / 50%);
+  backdrop-filter: blur(5px);
+
+  display: grid;
+  position: relative;
+  grid-template-areas: 'username email .    .    statuses edit' 
+                       'text     text  text text text     text';
+  grid-template-columns: auto auto 1fr 1fr auto auto;
+  column-gap: 10px;
+
+  animation: in 1 .3s ease-in-out;
+
+  &:not(:nth-last-child(2)) {
+    margin-bottom: 20px;
+  }
+
+  &.edit-mode {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+    z-index: 20;
+  }
+
+  .username {
+    grid-area: username;
+    font-size: 14px;
+    align-self: center;
+    justify-self: start;
+    margin: 10px;
+  }
+  .email {
+    grid-area: email;
+    font-size: 12px;
+    align-self: center;
+    justify-self: start;
+    margin: 10px;
+  }
+  .text {
+    grid-area: text;
+    background: rgba(255 255 255 / 10%);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+  }
+  .statuses {
+    grid-area: statuses;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:nth-last-child(1) {
+      margin-left: 10px;
+    }
+
+    .status-not-performed,
+    .status-performed,
+    .status-changed-admin {
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 3px;
+
+      &:not(:nth-last-child(1)) {
+        margin-right: 5px;
+      }
+    }
+
+    .status-not-performed {
+      background: rgba(226, 36, 36, 0.5);
+      color: #fff;
+      backdrop-filter: blur(5px);
+    }
+    .status-performed {
+      background: rgb(0 255 43 / 26%);
+      color: #222;
+      backdrop-filter: blur(5px);
+    }
+    .status-changed-admin {
+      background: rgb(0 20 255 / 25%);
+      color: #fff;
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  .edit {
+    grid-area: edit;
+    margin: 5px;
+    background: transparent;
+    font-size: 12px;
+    align-self: center;
+
+    img {
+      display: block;
+    }
+  }
+
+  .edit-popup {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    z-index: 20;
+
+    background: rgb(0 0 0 / 50%);
+    backdrop-filter: blur(5px);
+
+    form {
+      display: grid;
+      grid-template-areas: 'textarea textarea' 
+                           'check    submit';
+  
+      backdrop-filter: blur(5px);
+      padding: 10px;
+    }
+
+    .textarea {
+      grid-area: textarea;
+      width: 350px;
+      margin: 0px;
+    }
+
+    .performed-check {
+      grid-area: check;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+
+      input {
+        margin: 10px;
+      }
+    }
+
+    .submit {
+      grid-area: submit;
+    }
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

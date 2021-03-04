@@ -1,0 +1,58 @@
+.pagination {
+  position: absolute;
+  left: calc(100% + 50px);
+
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .page-btn {
+    margin: 5px;
+    font-size: 18px;
+
+    &.active {
+      background: rgba(255 255 255 / 50%);
+    }
+  }
+
+  .next,
+  .prew {
+    height: 20px;
+    width: 30px;
+    border: unset;
+
+    background: url("../../../img/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    transition: .3s;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &.disable {
+      cursor: default;
+      opacity: .3;
+      &:hover {
+        transform: unset;
+      }
+    }
+  }
+  .next {
+    transform: rotateZ(180deg);
+
+    &:hover {
+      transform: translateY(5px) rotateZ(180deg);
+    }
+
+    &.disable:hover {
+      transform: rotateZ(180deg);        
+    }
+  }
+}

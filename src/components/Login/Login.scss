@@ -1,0 +1,39 @@
+.login {
+  background: rgba(255 255 255 / 10%);
+  backdrop-filter: blur(5px);
+
+  margin: 30px;
+  padding-top: 20px;
+
+  .form {
+    display: grid;
+    grid-template-areas: "username"
+                         "password"
+                         "submit";
+
+    gap: 10px;
+
+    .username {
+      grid-area: username;
+    }
+    .password {
+      grid-area: password;
+    }
+    .submit {
+      grid-area: submit;
+      margin: 10px 20px;
+    }
+  }
+
+  .error {
+    font-size: 14px;
+    background: rgb(255 0 0 / 28%);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: calc(100% + 5px);
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+}

@@ -1,0 +1,25 @@
+.sort-area {
+  position: absolute;
+  right: calc(100% + 50px);
+  min-height: 100%;    
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  .sort-field {
+    &.active {
+      background: rgba(255 255 255 / 50%);
+    }
+
+    .dir-desc {
+      transform: rotateZ(180deg);
+    }
+
+    &:not(:nth-last-child(1)) {
+      margin-bottom: 5px;
+    }
+  }
+}

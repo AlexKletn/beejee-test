@@ -1,0 +1,46 @@
+{
+  "name": "react-optisoft-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --config ./webpack.config.js",
+    "start:dev": "webpack serve --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/runtime": "^7.13.9",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "babel-plugin-root-import": "^6.6.0",
+    "css-loader": "^5.0.2",
+    "get-cookie": "^0.2.1",
+    "mini-css-extract-plugin": "^1.3.7",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^5.0.0",
+    "postcss-scss": "^3.0.4",
+    "rc-virtual-list": "^3.2.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.15.4",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.22.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^5.1.0",
+    "url-loader": "^4.1.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

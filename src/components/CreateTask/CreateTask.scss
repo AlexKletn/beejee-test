@@ -1,0 +1,37 @@
+.create-task {
+  background: rgba(255 255 255 / 10%);
+  backdrop-filter: blur(5px);
+
+  width: 780px;
+  margin: 30px;
+  padding: 20px 10px 0px 10px;
+
+  .form {
+    display: grid;
+    grid-template-areas: 'username text   text' 
+                         'email    text   text' 
+                         'submit   submit submit';
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .username {
+      grid-area: username;
+    }
+    .email {
+      grid-area: email;
+    }
+    .text {
+      grid-area: text;
+      textarea {
+        height: 90px;
+        resize: none;
+      }
+    }
+    .submit {
+      grid-area: submit;
+
+      align-self: center;
+      justify-self: stretch;
+      margin: 10px 20px; 
+    }
+  }
+}
