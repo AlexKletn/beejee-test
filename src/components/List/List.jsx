@@ -13,23 +13,25 @@ export default function List(){
   const appCtx = useContext(AppContext)
   
   return (
-    <div className={style['list']}>
+    <>
       <Sort />
 
-      {
-        appCtx.tasks.map((task) => (
-          <Element 
-            key={ task.id }
-            id={ task.id }
-            username={ task.username }
-            email={ task.email }
-            text={ task.text }
-            status={ task.status }
-          />
-        ))
-      }
+      <div className={style['list']}>
+        {
+          appCtx.tasks.map((task) => (
+            <Element 
+              key={ task.id }
+              id={ task.id }
+              username={ task.username }
+              email={ task.email }
+              text={ task.text }
+              status={ task.status }
+            />
+          ))
+        }
+      </div>
 
       <Pagination />
-    </div>
+    </>
   )
 }

@@ -1,8 +1,10 @@
 .sort-area {
-  position: absolute;
-  right: calc(100% + 50px);
+  // position: absolute; //Альтернативаное позиционирование
+  // left: calc(100% + 50px); //Альтернативаное позиционирование
+
   min-height: 100%;    
   width: 200px;
+  margin-right: 50px;
 
   display: flex;
   flex-direction: column;
