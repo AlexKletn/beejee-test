@@ -111,7 +111,7 @@ export default function ListElement({ id, username, email, text, status, ...prop
 
                 <label className={ style['performed-check'] } >
                   <input 
-                    defaultChecked={ [0, 1].includes(status) }
+                    defaultChecked={ ![0, 1].includes(status) }
                     name="performed" 
                     type="checkbox" 
                     ref={ register() }
